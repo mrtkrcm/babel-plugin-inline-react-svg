@@ -5,10 +5,7 @@ node_js:
   - "10"
   - "9"
   - "8"
-  - "7"
   - "6"
-  - "5"
-  - "4"
 before_install:
   - 'case "${TRAVIS_NODE_VERSION}" in 0.*) export NPM_CONFIG_STRICT_SSL=false ;; esac'
   - 'nvm install-latest-npm'
