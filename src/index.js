@@ -1,8 +1,8 @@
 import { extname, dirname } from 'path';
 import { readFileSync } from 'fs';
-import template from 'babel-template';
-import traverse from 'babel-traverse';
-import { parse } from 'babylon';
+import template from '@babel/template';
+import traverse from '@babel/traverse';
+import { parse } from '@babel/parser';
 import resolve from 'resolve';
 
 import optimize from './optimize';
