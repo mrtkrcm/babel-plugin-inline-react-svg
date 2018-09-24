@@ -1,7 +1,7 @@
 import { transformFile } from '@babel/core';
 import fs from 'fs';
 import path from 'path';
-import inlineReactSvgPlugin from '../src'
+import inlineReactSvgPlugin from '../src';
 
 function assertReactImport(result) {
   const match = result.code.match(/import React from ['"]react['"]/g);
@@ -107,6 +107,7 @@ transformFile('test/fixtures/test-import.jsx', {
     ],
   }, (err2, requireResult) => {
     if (err2) throw err2;
+    console.log('test/fixtures/test-require.jsx', requireResult.code);
     if (importResult.code !== requireResult.code) {
       throw new Error("Test failed: Import and require tests don't match");
     }

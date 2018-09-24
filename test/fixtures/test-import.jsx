@@ -1,4 +1,5 @@
 import React from 'react';
+
 import MySvg from './close.svg';
 
 export default function MyFunctionIcon() {
