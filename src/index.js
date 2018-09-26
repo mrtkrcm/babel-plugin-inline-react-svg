@@ -100,15 +100,17 @@ export default ({ types: t }) => {
     visitor: {
       Program: {
         enter({ scope, node }, { file }) {
-          if (!scope.hasBinding('React')) {
-            const reactImportDeclaration = t.importDeclaration([
-              t.importDefaultSpecifier(t.identifier('React')),
-            ], t.stringLiteral('react'));
+          // if (!scope.hasBinding('React')) {
+          //   const reactImportDeclaration = t.importDeclaration([
+          //     t.importDefaultSpecifier(t.identifier('React')),
+          //   ], t.stringLiteral('react'));
 
-            file.set('ensureReact', () => { node.body.unshift(reactImportDeclaration); });
-          } else {
-            file.set('ensureReact', () => {});
-          }
+          //   file.set('ensureReact', () => { node.body.unshift(reactImportDeclaration); });
+          // } else {
+          //   file.set('ensureReact', () => {});
+          // }
+
+          file.set('ensureReact', () => { });
         },
       },
       CallExpression(path, state) {
